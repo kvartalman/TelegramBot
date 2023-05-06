@@ -1,7 +1,7 @@
 # Приступим к работе!
 
 import telebot
-bot = telebot.TeleBot('5943669544:AAErEBN8Qqa1mUWbhLWMXcIDQneW2m9oqi4')
+bot = telebot.TeleBot('')  # Input your token
 
 
 @bot.message_handler(commands=['start', 'help'])  # Обработка входящих команд /start и /help
