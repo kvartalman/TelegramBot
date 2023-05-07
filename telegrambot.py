@@ -22,4 +22,3 @@ def echo_all(message):
 bot.infinity_polling()
 
 
-#123
