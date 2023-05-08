@@ -1,7 +1,9 @@
 # Приступим к работе!
+from venv import logger
 
-import telebot
-bot = telebot.TeleBot('')  # Input your token
+
+import telebot as telebot
+bot = telebot.TeleBot('5943669544:AAErEBN8Qqa1mUWbhLWMXcIDQneW2m9oqi4')  # Input your token
 
 
 @bot.message_handler(commands=['start', 'help'])  # Обработка входящих команд /start и /help
@@ -19,6 +21,22 @@ def echo_all(message):
         bot.reply_to(message, 'Я ещё пока ничего не умею, но скоро научусь')
 
 
+@bot.message_handler(content_types=['document'])
+def make_doc_reaction(message):
+    bot.reply_to(message, 'Благодарю за отправленный документ!')
+
+
+@bot.message_handler(content_types=['audio'])
+def make_audio_reaction(message):
+    bot.reply_to(message, 'Благодарю за отправленный аудиофайл!')
+
+
+# @bot.callback_query_handler(func=lambda call: True)
+# def test_callback(call):
+#     logger.info(call)
+
+
 bot.infinity_polling()
+
 
 
