@@ -9,6 +9,10 @@ bot = telebot.TeleBot('')  # Input your token
 @bot.message_handler(commands=['start', 'help'])  # Обработка входящих команд /start и /help
 def send_welcome(message):
     bot.reply_to(message, 'Приветствую, авантюрист!')
+    markup = telebot.types.InlineKeyboardMarkup()
+    button1 = telebot.types.InlineKeyboardMarkup(text='Серёга', url='https://vk.com/serhioofficialpage')
+    markup.add(button1)
+    bot.send_message(message.from_user.id, 'Моя страничка вк')
 
 
 @bot.message_handler(func=lambda x: True)        # Обрабатываем любое сообщение, поэтому функция всегда True
